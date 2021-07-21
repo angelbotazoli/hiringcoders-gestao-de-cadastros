@@ -92,7 +92,7 @@ export function TableProducts(props) {
           <S.Tr key={data.id}>
             <td>{data.product}</td>
             <td>{data.quantity}</td>
-            <td>{data.value}</td>
+            <td>{data.price}</td>
           </S.Tr>
         ))}
       </S.Tbody>
