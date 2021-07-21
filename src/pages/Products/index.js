@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import * as S from './style'
-import { HeaderGeneric, Table } from '../../components/Header'
+import { HeaderGeneric, TableProducts } from '../../components/Header'
 import Footer from '../../components/Footer'
 
 function Products(props) {
@@ -38,7 +38,8 @@ function Products(props) {
           <S.Input type="email" placeholder="Digite o valor" value={price} onChange={element => setPrice(element.target.value)} />
           <S.Button type="submit" onClick={setProductsStorage} >Salvar</S.Button>
         </S.Content>
-        {status ? <Table /> : ''}
+        {status ? <TableProducts id="products" /> : ''}
+
       </S.HomeContainer>
       <Footer />
     </>

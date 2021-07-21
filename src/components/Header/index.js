@@ -46,8 +46,10 @@ export function HeaderGeneric() {
   );
 }
 
-export function Table(props) {
-  const products = JSON.parse(localStorage.getItem('users'));
+export function TableUsers(props) {
+
+  console.log(props.id)
+  const data = JSON.parse(localStorage.getItem(props.id));
 
   return (
     <S.Table>
@@ -59,31 +61,41 @@ export function Table(props) {
         </S.Tr>
       </thead>
       <S.Tbody>
-        {products.map(product => (
-          <S.Tr key={product.id}>
-            <td>{product.name}</td>
-            <td>{product.email}</td>
-            <td>{product.phone}</td>
+        {data.map(data => (
+          <S.Tr key={data.id}>
+            <td>{data.name}</td>
+            <td>{data.email}</td>
+            <td>{data.phone}</td>
           </S.Tr>
         ))}
       </S.Tbody>
     </S.Table>
   );
+}
 
+export function TableProducts(props) {
 
+  console.log(props.id)
+  const data = JSON.parse(localStorage.getItem(props.id));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  return (
+    <S.Table>
+      <thead>
+        <S.Tr>
+          <S.Th>Produto</S.Th>
+          <S.Th>Quantidade</S.Th>
+          <S.Th>Valor</S.Th>
+        </S.Tr>
+      </thead>
+      <S.Tbody>
+        {data.map(data => (
+          <S.Tr key={data.id}>
+            <td>{data.product}</td>
+            <td>{data.quantity}</td>
+            <td>{data.value}</td>
+          </S.Tr>
+        ))}
+      </S.Tbody>
+    </S.Table>
+  );
 }

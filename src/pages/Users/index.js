@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import * as S from './style'
-import { HeaderGeneric, Table } from '../../components/Header'
+import { HeaderGeneric, TableUsers } from '../../components/Header'
 import Footer from '../../components/Footer'
 
 function Users(props) {
@@ -38,7 +38,7 @@ function Users(props) {
           <S.Input type="email" placeholder="Digite seu telefone" value={phone} onChange={element => setPhone(element.target.value)} />
           <S.Button type="submit" onClick={setUsersStorage} >Salvar</S.Button>
         </S.Content>
-        {status ? <Table /> : ''}
+        {status ? <TableUsers id="users" /> : ''}
 
       </S.HomeContainer>
       <Footer />
